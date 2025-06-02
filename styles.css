@@ -1,0 +1,182 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f2f5, #ffffff);
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Resume Wrapper */
+.resume-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.resume-wrapper:hover {
+  transform: scale(1.01);
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.sidebar .profile-photo img {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.sidebar h1, .sidebar h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+  color: #f39c12;
+}
+
+.sidebar .personal-info, .sidebar .languages, .sidebar .hobbies {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.sidebar h3 {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Main Content */
+.main-content {
+  flex: 2;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.main-content section {
+  margin-bottom: 2rem;
+}
+
+.main-content h2 {
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  position: relative;
+}
+
+.main-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #f39c12;
+}
+
+.main-content ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.main-content article {
+  margin-bottom: 1.5rem;
+  background: #fdfdfd;
+  border-left: 4px solid #3498db;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.main-content article:hover {
+  transform: translateY(-3px);
+}
+
+.duration {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar, .main-content {
+    padding: 1rem;
+  }
+
+  .sidebar .profile-photo img {
+    width: 80px;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+}
+
+#button-container {
+  text-align: center;
+  margin: 1rem auto 2rem;
+}
+
+#button-container button {
+  background-color: #2e3b4e;
+  color: #ffd700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  padding: 6px 12px;
+  margin: 0 6px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#button-container button:hover {
+  background-color: #ffd700;
+  color: #2e3b4e;
+  transform: scale(1.05);
+}
+
+@media print {
+  #button-container {
+    display: none;
+  }
+}
